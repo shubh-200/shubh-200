@@ -5,3 +5,4 @@ requests
 pylatexenc
 psutil
 pytz
+seaborn
