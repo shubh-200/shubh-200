@@ -2,8 +2,6 @@
 
 ### Engineering Autonomy, Exploring Quantum
 
-![](https://komarev.com/ghpvc/?username=shubh-200&label=VIEWS&style=for-the-badge)
-
 - 🔭 I'm currently working on **autonomous surface vessel (ASV) for coastal navigation**
 
 - 🌱 I'm currently learning **quantum reservoir computing for predicting market volatility**
