@@ -2,7 +2,7 @@
 
 ### Engineering Autonomy, Exploring Quantum
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=shubh-200&label=Profile views&color=0e75b6&style=flat" alt="shubh-200" /> </p>
+![](https://komarev.com/ghpvc/?username=shubh-200&label=VIEWS&style=for-the-badge)
 
 - 🔭 I'm currently working on **autonomous surface vessel (ASV) for coastal navigation**
 
