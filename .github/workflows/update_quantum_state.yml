@@ -1,0 +1,40 @@
+name: Update Quantum State Q-Sphere
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
+  workflow_dispatch: # Allows manual triggering from the Actions tab
+
+jobs:
+  update-state:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Grants permission to push updated SVG back to the repo
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Run Quantum State Generator
+        env:
+          # Automatically uses GitHub's default token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/generate_qsphere.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add assets/quantum_state.svg
+          git commit -m "Auto-update quantum profile state [skip ci]" || exit 0
+          git push
